@@ -1,0 +1,10 @@
+{{ $name := .Get "name"  }}
+{{ $path := .Get "path" }}
+{{ $random := now.UnixNano }}
+
+{{ with .Page.GetPage $path }}
+<span id="mount-{{ $random }}"></span>
+<script data-for-react="1">
+  mountModal("mount-{{ $random }}", {name: {{ $name }}, url: {{ .RelPermalink }} });
+</script>
+{{ end }}

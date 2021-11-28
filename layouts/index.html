@@ -1,7 +1,10 @@
 {{define "main"}}
+{{ $section := "braindump"}}
+{{ $title := "braindump"}}
 <div class="page" data-level="1">
   <div class="content">
-    {{ .Content }}
-  </div>
+    {{ range (where .Site.RegularPages.ByTitle "Section" $section ) }}
+    <li><a href="{{ .Permalink }}">{{ .Params.title | humanize | title }}</a></li>
+    {{ end }}  </div>
 </div>
 {{end}}

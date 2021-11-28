@@ -1,0 +1,37 @@
+{
+  "name": "cortex-theme",
+  "version": "0.1.0",
+  "description": "Theme for my braindump in hugo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/seth-cohen/cortex.git"
+  },
+  "keywords": [
+    "org",
+    "org-roam",
+    "hugo",
+    "org-hugo"
+  ],
+  "author": "Seth Cohen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/seth-cohen/cortex/issues"
+  },
+  "homepage": "https://github.com/seth-cohen/cortex#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "@babel/preset-react": "^7.16.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.16",
+    "react": "^17.0.2",
+    "react-bootstrap": "^2.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
