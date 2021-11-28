@@ -8,7 +8,7 @@ window.store = {
         // You can customize your searchable fields using any .Page parameters
         "title": "{{ .Title  }}",
         "tags": [{{ range .Params.Tags }}"{{ . }}",{{ end }}],
-        "content": {{ .Content | plainify }}, // Strip out HTML tags
+        "content": {{ .Content | replaceRE "(?m)(?s:<(style|script)[^>]*>[^<]*<\\/(style|script)>)" "" | plainify }}, // Strip out HTML tags
         "url": "{{ .Permalink }}"
     },
     {{ end }}
