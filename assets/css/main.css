@@ -215,7 +215,7 @@ dt {
   font-weight: bold;
   text-align: right;
 }
-dd {
+dd {kjG
   width: 60%;
   padding-left: 1em;
   margin-left: 0px;
@@ -281,4 +281,30 @@ dt + dt + dd {
   .search-extract {
     display: none;
   }
+}
+.popover {
+  max-width: 100% !important;
+}
+
+.pageContentPopover .content {
+    padding: 0rem !important;
+}
+
+.pageContentPopover {
+    width: 400px;
+    max-height: 400px;
+    overflow: hidden;
+    font-size: .8rem;
+}
+.pageContentPopover h1 {
+    font-size: 1.2rem;
+}
+
+.pageContentPopover h2 {
+    font-size: 1.1rem;
+}
+
+.pageContentPopover h3,
+.pageContentPopover h4 {
+    font-size: 1rem;
 }

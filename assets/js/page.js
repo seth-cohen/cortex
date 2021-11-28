@@ -54,6 +54,14 @@ function fetchNote(href, level) {
 
       setTimeout(
         function (element, level) {
+          // Execute scripts first at least react scripts to update DOM as necessary
+          const scripts = element.querySelectorAll("script");
+          scripts.forEach((s) => {
+            if (!!s.dataset.forReact) {
+              new Function(s.text)();
+            }
+          });
+
           element.dataset.level = level + 1;
           initializePage(element, level + 1);
           element.scrollIntoView();
@@ -93,7 +101,7 @@ function initializePage(page, level) {
         let response = await fetch(prefetchLink);
         let fragment = document.createElement("template");
         fragment.innerHTML = await response.text();
-        let ct = await response.headers.get("content-type");
+        let ct = response.headers.get("content-type");
         if (ct.includes("text/html")) {
           element.addEventListener("click", function (e) {
             if (!e.ctrlKey && !e.metaKey) {

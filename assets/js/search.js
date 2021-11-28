@@ -1,13 +1,16 @@
 function displayResults(results, store) {
   const searchResults = document.getElementById("results");
   if (results.length) {
-    let resultList = "<h3 class='search-count'>" + results.length + " results found</h3>";
+    let resultList =
+      "<h3 class='search-count'>" + results.length + " results found</h3>";
     // Iterate and build result list elements
     for (const n in results) {
       const item = store[results[n].ref];
+      resultList += '<li><a href="' + item.url + '">' + item.title + "</a>";
       resultList +=
-        '<li><a href="' + item.url + '">' + item.title + "</a>";
-      resultList += "<span class='search-extract'>" + item.content.substring(0, 100) + "...</span></li>";
+        "<span class='search-extract'>" +
+        item.content.substring(0, 100) +
+        "...</span></li>";
     }
     searchResults.innerHTML = resultList;
   } else {
@@ -46,8 +49,9 @@ if (query) {
     }
   });
 
+  console.log("search");
   // Perform the search
-  const results = idx.search(query);
+  const results = idx.search(query + "*");
   // Update the list with results
   displayResults(results, window.store);
 }
