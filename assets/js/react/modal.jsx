@@ -65,7 +65,6 @@ function NodeLink(props) {
   );
 }
 
-console.log("loaded");
 window.mountModal = (elementId, data) => {
   ReactDOM.render(<NodeLink {...data} />, document.getElementById(elementId));
 };

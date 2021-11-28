@@ -27,8 +27,6 @@ if (query) {
   // Retain the search input in the form when displaying results
   document.getElementById("search-input").setAttribute("value", query);
 
-  console.log(window.store);
-
   const idx = lunr(function () {
     this.ref("id");
     this.field("title", {
@@ -49,7 +47,6 @@ if (query) {
     }
   });
 
-  console.log("search");
   // Perform the search
   const results = idx.search(query + "*");
   // Update the list with results
